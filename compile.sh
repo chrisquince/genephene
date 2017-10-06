@@ -1,0 +1,4 @@
+pdflatex trait_prediction.tex
+bibtex trait_prediction
+pdflatex trait_prediction.tex
+pdflatex trait_prediction.tex

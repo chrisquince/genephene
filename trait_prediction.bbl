@@ -1,0 +1,141 @@
+\begin{thebibliography}{10}
+
+\bibitem{Huttenhower2012}
+Huttenhower C, Gevers D, Knight R, Abubucker S, Badger JH, Chinwalla AT, et~al.
+\newblock {Structure, function and diversity of the healthy human microbiome}.
+\newblock Nature. 2012;486(7402):207--214.
+\newblock doi:{10.1038/nature11234}.
+
+\bibitem{Gilbert2014}
+Gilbert JA, Jansson JK, Knight R.
+\newblock {The Earth Microbiome project: successes and aspirations}.
+\newblock BMC Biology. 2014;12(1):69.
+\newblock doi:{10.1186/s12915-014-0069-1}.
+
+\bibitem{Zhang2015}
+Zhang H, Ning K.
+\newblock {The Tara Oceans Project: New Opportunities and Greater Challenges
+  Ahead.}
+\newblock Genomics, proteomics {\&} bioinformatics. 2015;13(5):275--7.
+\newblock doi:{10.1016/j.gpb.2015.08.003}.
+
+\bibitem{Alneberg2014}
+Alneberg J, Bjarnason BS, de~Bruijn I, Schirmer M, Quick J, Ijaz UZ, et~al.
+\newblock {Binning metagenomic contigs by coverage and composition}.
+\newblock Nature Methods. 2014;11(11):1144--1146.
+\newblock doi:{10.1038/nmeth.3103}.
+
+\bibitem{Eren2015}
+Eren AM, Esen {\"{O}}C, Quince C, Vineis JH, Morrison HG, Sogin ML, et~al.
+\newblock {Anvi'o: an advanced analysis and visualization platform for ‘omics
+  data}.
+\newblock PeerJ. 2015;3:e1319.
+\newblock doi:{10.7717/peerj.1319}.
+
+\bibitem{Anantharaman2016}
+Anantharaman K, Brown CT, Hug LA, Sharon I, Castelle CJ, Probst AJ, et~al.
+\newblock {Thousands of microbial genomes shed light on interconnected
+  biogeochemical processes in an aquifer system}.
+\newblock Nature Communications. 2016;7:13219.
+\newblock doi:{10.1038/ncomms13219}.
+
+\bibitem{Kanehisa2017}
+Kanehisa M, Furumichi M, Tanabe M, Sato Y, Morishima K.
+\newblock {KEGG: new perspectives on genomes, pathways, diseases and drugs}.
+\newblock Nucleic Acids Research. 2017;45(D1):D353--D361.
+\newblock doi:{10.1093/nar/gkw1092}.
+
+\bibitem{Finn2016}
+Finn RD, Coggill P, Eberhardt RY, Eddy SR, Mistry J, Mitchell AL, et~al.
+\newblock {The Pfam protein families database: towards a more sustainable
+  future}.
+\newblock Nucleic Acids Research. 2016;44(D1):D279--D285.
+\newblock doi:{10.1093/nar/gkv1344}.
+
+\bibitem{Tatusov1997}
+Tatusov RL, Koonin EV, Lipman DJ.
+\newblock {A genomic perspective on protein families.}
+\newblock Science (New York, NY). 1997;278(5338):631--7.
+
+\bibitem{Langille2013}
+Langille MGI, Zaneveld J, Caporaso JG, McDonald D, Knights D, Reyes JA, et~al.
+\newblock {Predictive functional profiling of microbial communities using 16S
+  rRNA marker gene sequences}.
+\newblock Nature Biotechnology. 2013;31(9):814--821.
+\newblock doi:{10.1038/nbt.2676}.
+
+\bibitem{Louca2016}
+Louca S, Jacques SMS, Pires APF, Leal JS, Srivastava DS, Parfrey LW, et~al.
+\newblock {High taxonomic variability despite stable functional structure
+  across microbial communities.}
+\newblock Nature ecology {\&} evolution. 2016;1(1):15.
+\newblock doi:{10.1038/s41559-016-0015}.
+
+\bibitem{Louca2016a}
+Louca S, Parfrey LW, Doebeli M.
+\newblock {Decoupling function and taxonomy in the global ocean microbiome.}
+\newblock Science (New York, NY). 2016;353(6305):1272--7.
+\newblock doi:{10.1126/science.aaf4507}.
+
+\bibitem{Whitman}
+Whitman WB, {Bergey's Manual Trust}, {Wiley Online Library (Online service)}.
+\newblock {Bergey's manual of systematics of archaea and bacteria};.
+
+\bibitem{Hyatt2010}
+Hyatt D, Chen GL, LoCascio PF, Land ML, Larimer FW, Hauser LJ.
+\newblock {Prodigal: prokaryotic gene recognition and translation initiation
+  site identification}.
+\newblock BMC Bioinformatics. 2010;11(1):119.
+\newblock doi:{10.1186/1471-2105-11-119}.
+
+\bibitem{Buchfink2014}
+Buchfink B, Xie C, Huson DH.
+\newblock {Fast and sensitive protein alignment using DIAMOND}.
+\newblock Nature Methods. 2014;12(1):59--60.
+\newblock doi:{10.1038/nmeth.3176}.
+
+\bibitem{Hastie2009a}
+Hastie T, Tibshirani R, Friedman J.
+\newblock {Linear Methods for Classification}.
+\newblock In: The Elements of Statistical Learning; 2009. p. 101--137.
+
+\bibitem{Freedman2009}
+Freedman D.
+\newblock {Statistical models : theory and practice}.
+\newblock Cambridge University Press; 2009.
+\newblock Available from:
+  \url{http://www.cambridge.org/gb/academic/subjects/statistics-probability/statistical-theory-and-methods/statistical-models-theory-and-practice-2nd-edition?format=HB{\&}isbn=9780521112437{\#}IqXivBILqUALXPKZ.97}.
+
+\bibitem{Lee2006}
+Lee SI, Lee H, Abbeel P, Ng AN.
+\newblock Efficient L1 Regularized Logistic Regression.
+\newblock In: The Twenty-First National Conference on Artificial Intelligence
+  and the Eighteenth Innovative Applications of Artificial Intelligence
+  Conference; 2006.
+
+\bibitem{Lello2017}
+Lello L, Avery SG, Tellier L, Vazquez A, de~los Campos G, Hsu SDH.
+\newblock {Accurate Genomic Prediction Of Human Height}.
+\newblock doiorg. 2017; p. 190124.
+\newblock doi:{10.1101/190124}.
+
+\bibitem{Fawcett2006}
+Fawcett T, Tom.
+\newblock {An introduction to ROC analysis}.
+\newblock Pattern Recognition Letters. 2006;27(8):861--874.
+\newblock doi:{10.1016/j.patrec.2005.10.010}.
+
+\bibitem{Flach2011}
+Flach P, Hern{\'{a}}ndez-Orallo J, Ferri C.
+\newblock {A coherent interpretation of auc as a measure of aggregated
+  classification performance}.
+\newblock Proceedings of the 28th International Conference on Machine Learning,
+  Bellevue, WA, USA. 2011; p. 657--664.
+\newblock doi:{10.1145/347090.347126}.
+
+\bibitem{Martiny2015}
+Martiny JBH, Jones SE, Lennon JT, Martiny AC.
+\newblock {Microbiomes in light of traits: A phylogenetic perspective}.
+\newblock Science. 2015;350(6261).
+
+\end{thebibliography}
