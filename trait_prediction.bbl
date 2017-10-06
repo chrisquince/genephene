@@ -71,6 +71,13 @@ Louca S, Jacques SMS, Pires APF, Leal JS, Srivastava DS, Parfrey LW, et~al.
 \newblock Nature ecology {\&} evolution. 2016;1(1):15.
 \newblock doi:{10.1038/s41559-016-0015}.
 
+\bibitem{Louca2017}
+Louca S, Jacques SMS, Pires APF, Leal JS, Gonz{\'{a}}lez AL, Doebeli M, et~al.
+\newblock {Functional structure of the bromeliad tank microbiome is strongly
+  shaped by local geochemical conditions}.
+\newblock Environmental Microbiology. 2017;19(8):3132--3151.
+\newblock doi:{10.1111/1462-2920.13788}.
+
 \bibitem{Louca2016a}
 Louca S, Parfrey LW, Doebeli M.
 \newblock {Decoupling function and taxonomy in the global ocean microbiome.}
@@ -80,6 +87,18 @@ Louca S, Parfrey LW, Doebeli M.
 \bibitem{Whitman}
 Whitman WB, {Bergey's Manual Trust}, {Wiley Online Library (Online service)}.
 \newblock {Bergey's manual of systematics of archaea and bacteria};.
+
+\bibitem{Weimann2016}
+Weimann A, Mooren K, Frank J, Pope PB, Bremges A, McHardy AC.
+\newblock {From genomes to phenotypes: Traitar, the microbial trait analyzer};
+  2016.
+\newblock Available from: \url{http://biorxiv.org/lookup/doi/10.1101/043315}.
+
+\bibitem{Berger2005}
+Berger SA.
+\newblock {GIDEON: a comprehensive Web-based resource for geographic medicine}.
+\newblock International Journal of Health Geographics. 2005;4(1):10.
+\newblock doi:{10.1186/1476-072X-4-10}.
 
 \bibitem{Hyatt2010}
 Hyatt D, Chen GL, LoCascio PF, Land ML, Larimer FW, Hauser LJ.
