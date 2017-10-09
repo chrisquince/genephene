@@ -387,7 +387,25 @@ Taxonomic trees of all prokaryotic NCBI species with full genomes. For training 
 \label{fig4}
 \end{figure}
 
-To investigate this phenomenon and attempt to find orthologs with real causal associations with functions, we tried training a model on one part of the phylogenetic tree and test its performance on another. If a classifier can predict phenotype based on genes in a distantly-related, unseen set of organisms, it is likely the genes it is using have a real association with the function. In particular, we tried training our logistic regression models on the Proteobacteria, a large phylum of bacteria, and testing on the rest of the phylogenetic tree of life.
+To investigate this phenomenon and attempt to find orthologs with real causal associations with functions, we tried training a model on one part of the phylogenetic tree and test its performance on another. If a classifier can predict phenotype based on genes in a distantly-related, unseen set of organisms, it is likely the genes it is using have a real association with the function. In particular, we tried training our logistic regression models on the Proteobacteria, a large phylum of bacteria, and testing on the rest of the phylogenetic tree of life. Some functions did not have significant numbers of species in each of these sets; we used only functions with at least 5 species in the training set and 5 in the test, leaving 75 functions out of 84. 
+
+As might be expected, our classifiers performed significantly worse in this case, compared to being trained on a random selection of species from throughout the prokaryotic part of the tree of life, see Figure\~ref{fig5}. However, for a significant number of functions the performance of the classsifier is still fairly good, indicating an ability to make predictions which are generalizable to significantly different unseen groups of organisms. 19 functions have an AUROC score greater than 80\%, and 9 greater than 90\%. 
+
+\begin{figure}[!h]
+\includegraphics[width=0.9\textwidth]{fig5b}
+\caption{{\bf Overall performance of classification algorithm in the cross-taxoa case.}
+The AUROC score on each classification task (each function) is shown for the LR classifiers based on KOs for the case of random train/test splitting as in Figure~\ref{fig1}, and a classifier trained on the Proteobacteria and tested on all other organisms in the dataset.}
+\label{fig5}
+\end{figure}
+
+Figure~\ref{fig6} shows a scatter plot of classifier complexity against performance, as in Figure~\ref{fig3}. Notable is that the group of classifiers achieving high accuracy while using a lot of genes is gone: functions such as fermentation and nitrate reduction, which were in this group of classifiers, are now much less accurate. Classifiers which work well in the cross-taxa case all use a relatively small number of genes, less than 150 or so. This suggests that the classifiers using a large number of genes to make predictions in the randomized case may have been using a range of genes found in different closely-related clusters of organisms which all have the target trait, but which may not have a causal relationship with the function.
+
+\begin{figure}
+\includegraphics[width=0.7\textwidth]{fig6}
+\caption{{\bf Classifier performance and complexity, cross-taxa case.}
+Scatterplot showing the AUROC score of the different classifiers plotted against the number of gene orthologs used for the cross-taxa classifiers. Point size is proportional to the number of positive examples in the training set.}
+\label{fig6}
+\end{figure}
 
 \subsection*{Prediction of MAG phenotypes}
 
