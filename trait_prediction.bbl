@@ -88,6 +88,34 @@ Louca S, Parfrey LW, Doebeli M.
 Whitman WB, {Bergey's Manual Trust}, {Wiley Online Library (Online service)}.
 \newblock {Bergey's manual of systematics of archaea and bacteria};.
 
+\bibitem{Leslie2002}
+Leslie C, Eskin E, Noble WS.
+\newblock {The spectrum kernel: a string kernel for SVM protein
+  classification.}
+\newblock Pacific Symposium on Biocomputing Pacific Symposium on Biocomputing.
+  2002; p. 564--75.
+
+\bibitem{Cai2003}
+Cai CZ, Han LY, Ji ZL, Chen X, Chen YZ.
+\newblock {SVM-Prot: web-based support vector machine software for functional
+  classification of a protein from its primary sequence}.
+\newblock Nucleic Acids Research. 2003;31(13):3692--3697.
+\newblock doi:{10.1093/nar/gkg600}.
+
+\bibitem{Someya2010}
+Someya S, Kakuta M, Morita M, Sumikoshi K, Cao W, Ge Z, et~al.
+\newblock {Prediction of carbohydrate-binding proteins from sequences using
+  support vector machines.}
+\newblock Advances in bioinformatics. 2010;2010.
+\newblock doi:{10.1155/2010/289301}.
+
+\bibitem{Asgari2015}
+Asgari E, Mofrad MRK.
+\newblock {Continuous Distributed Representation of Biological Sequences for
+  Deep Proteomics and Genomics}.
+\newblock PLOS ONE. 2015;10(11):e0141287.
+\newblock doi:{10.1371/journal.pone.0141287}.
+
 \bibitem{Weimann2016}
 Weimann A, Mooren K, Frank J, Pope PB, Bremges A, McHardy AC.
 \newblock {From genomes to phenotypes: Traitar, the microbial trait analyzer};
@@ -137,6 +165,11 @@ Lello L, Avery SG, Tellier L, Vazquez A, de~los Campos G, Hsu SDH.
 \newblock {Accurate Genomic Prediction Of Human Height}.
 \newblock doiorg. 2017; p. 190124.
 \newblock doi:{10.1101/190124}.
+
+\bibitem{Hastie2009}
+Hastie T, Tibshirani R, Friedman J.
+\newblock {Random Forests}.
+\newblock In: The Elements of Statistical Learning; 2009. p. 1--18.
 
 \bibitem{Fawcett2006}
 Fawcett T, Tom.
