@@ -432,7 +432,17 @@ Proportions of MAGS from the two environments having a function, for some of the
 \label{mag-compare}
 \end{figure}
 
-These differences in function might well be expected between these two environents, with, for example, fermentation being very important in the AD process, and aerobic chemoheterotrophy obviously not being important as the environment is aerobic. This indicates that the method is acapable of producing useful information about MAGs. However, some of the functional assignments seem strange, for example organisms being classified as acetoclastic methanogens but not as methanogens. 
+These differences in function might well be expected between these two environents, with, for example, fermentation being very important in the AD process, and aerobic chemoheterotrophy obviously not being important as the environment is aerobic. This indicates that the method is acapable of producing useful information about MAGs.
+
+However, some of the functional assignments seem strange, for example organisms being classified as acetoclastic or hydrogenotrophic methanogens but not as methanogens. Looking at the gene orthologs present in these organisms and their taxonomic assignments sheds some light on what is going on here, see Table~\ref{tab3}. For example, some of the acetoclastic methanogens which are misclassified as not being methanogens are missing the \emph{mcrA} ortholog K00399, presumably because the MAGs are incomplete and this gene has been missed. Another example is an organism classified as being a hydrogenotrophic methanogen but not a methanogen. This MAG appears to be from the bacterium \emph{Caldisericum exile}, which is not a methanogen and does not possess \emph{mcrA} (it is an anaerobic, thermophilic bacterium which respires by thiosulfate reduction~\ref{Mori2009}). However, it does possess genes for subunits of the energy-converting hydrogenase A, noted earlier (Table~\ref{tab1}) to be incidative of hydrogenotrophic methanogenesis. Therefore, these discrepancies may be the result either of incomplete MAGs, or of combinations of genes which are rare or unseen in the training set.
+
+\begin{table}
+\scriptsize
+\csvautotabular{datafiles/methanogen_mag_details.csv}
+
+\caption{{\bf Key genes and predicted functions for MAGs predicted to be methanogens.}
+Gene copy numbers for the \emph{mcrA} methanogenesis gene and the energy-converting hyrdogenase A, along with functional predictions, for AD MAGs predicted to be mathanogenic by our algorithm.}\label{tab3}
+\end{table}
 
 
 \section*{Discussion}
