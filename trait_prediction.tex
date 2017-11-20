@@ -385,7 +385,7 @@ hydrogenotrophic methanogensis & 0.756 & $\begin{pmatrix}9281 & 43 \\ 6 & 77\end
 \end{tabular}
 
 \caption{{\bf Comparison of classifiers to KEGG modules.}
-Table showing the performance of using KEGG module presence/absence against LR classifiers for some functions where equivalent KEGG modules exist. Since the KEGG module approach doesn't give a probability, the AUROC score cannot be used, so the F1 score and confusion matrices are compared.}\label{tab2}
+Table showing the performance of using KEGG module presence/absence against LR classifiers for some functions where equivalent KEGG modules exist. Since the KEGG module approach does not give a probability, the AUROC score cannot be used, so the F1 score and confusion matrices are compared.}\label{tab2}
 \end{table}
 
 \subsection*{Performance across taxa}
@@ -399,13 +399,13 @@ Taxonomic trees of all prokaryotic NCBI species with full genomes. For training 
 \label{fig4}
 \end{figure}
 
-To investigate this phenomenon and attempt to find orthologs with real causal associations with functions, we tried training a model on one part of the phylogenetic tree and test its performance on another. If a classifier can predict phenotype based on genes in a distantly-related, unseen set of organisms, it is likely the genes it is using have a real association with the function. In particular, we tried training our logistic regression models on the Proteobacteria, a large phylum of bacteria, and testing on the rest of the phylogenetic tree of life. Some functions did not have significant numbers of species in each of these sets; we used only functions with at least 5 species in the training set and 5 in the test, leaving 59 functions out of 84. 
+To investigate this phenomenon and attempt to find orthologs with real causal associations with functions, we tried training a model on one part of the phylogenetic tree and testing its performance on another. If a classifier can predict phenotype based on genes in a distantly-related, unseen set of organisms, it is likely the genes it is using have a real association with the function. In particular, we tried training our logistic regression models on the Proteobacteria, a large phylum of bacteria, and testing on the rest of the phylogenetic tree of life. Some functions did not have significant numbers of species in each of these sets; we used only functions with at least 5 species in the training set and 5 in the test, leaving 59 functions out of 84. 
 
 As might be expected, our classifiers performed significantly worse in this case, compared to being trained on a random selection of species from throughout the prokaryotic part of the tree of life, see Figure~\ref{fig5}. However, for a significant number of functions the performance of the classsifier is still fairly good, indicating an ability to make predictions which are generalizable to significantly different unseen groups of organisms. 19 functions have an AUROC score greater than 80\%, and 9 greater than 90\%. 
 
 \begin{figure}[!h]
 \includegraphics[width=0.9\textwidth]{fig5b}
-\caption{{\bf Overall performance of classification algorithm in the cross-taxoa case.}
+\caption{{\bf Overall performance of classification algorithm in the cross-taxa case.}
 The AUROC score on each classification task (each function) is shown for the LR classifiers based on KOs for the case of random train/test splitting as in Figure~\ref{fig1}, and a classifier trained on the Proteobacteria and tested on all other organisms in the dataset.}
 \label{fig5}
 \end{figure}
