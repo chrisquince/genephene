@@ -233,7 +233,7 @@ Christopher Quince\textsuperscript{2},
 \end{flushleft}
 % Please keep the abstract below 300 words
 \section*{Abstract}
-Using machine learning, we associate bacterial and archaeal genomes with functional and metabolic traits. To train these models, we use a database of 84 phenotypic traits associated with 9407 prokaryotic genomes downloaded from the NCBI genome database, and are able to classify organisms as possessing these functions with greater than 90\% AUROC score for 65 of these functions. We then use these models to make predictions about the phenotypes of novel microbial genomes assembled from metagenomic studies from a variety of environments.
+Using machine learning, we predict functional and metabolic traits of bacteria and archaea from their genomes. To train these models, we use a database of 84 phenotypic traits associated with 9407 prokaryotic genomes downloaded from the NCBI genome database. We compared multiple models and choices of feature vectors. We found that a lasso logistic regression using frequency of KEGG orthologs performed best. This model was able to classify 65 of these functions with greater than 90\% cross-validated AUROC score. We then used this models to predict the phenotypes of novel microbial genomes assembled from metagenomic studies from a variety of environments.
 
 
 % Please keep the Author Summary between 150 and 200 words
