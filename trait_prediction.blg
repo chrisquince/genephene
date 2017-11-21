@@ -2,12 +2,14 @@ This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: trait_prediction.aux
 The style file: plos2015.bst
-Illegal, another \bibstyle command---line 71 of file trait_prediction.aux
+Illegal, another \bibstyle command---line 73 of file trait_prediction.aux
  : \bibstyle
  :          {plos2015}
 I'm skipping whatever remains of this command
 Database file #1: trait_prediction.bib
 Database file #2: others.bib
+Warning--I didn't find a database entry for "Eddy2011"
+Warning--I didn't find a database entry for "Hastie2009b"
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
@@ -17,45 +19,45 @@ Warning--there's a month but no year in Whitman
 Warning--missing publisher in Hastie2009a
 Warning--empty pages in Lee2006
 Warning--missing publisher in Hastie2009
-You've used 30 entries,
+You've used 29 entries,
             3058 wiz_defined-function locations,
-            886 strings with 19234 characters,
-and the built_in function-call counts, 112631 in all, are:
-= -- 13524
-> -- 536
+            881 strings with 18688 characters,
+and the built_in function-call counts, 108580 in all, are:
+= -- 13025
+> -- 508
 < -- 5
-+ -- 451
-- -- 134
-* -- 10908
-:= -- 12351
-add.period$ -- 135
-call.type$ -- 30
++ -- 437
+- -- 127
+* -- 10525
+:= -- 11914
+add.period$ -- 130
+call.type$ -- 29
 change.case$ -- 6
 chr.to.int$ -- 0
-cite$ -- 35
-duplicate$ -- 5033
-empty$ -- 11462
-format.name$ -- 162
-if$ -- 25688
+cite$ -- 34
+duplicate$ -- 4798
+empty$ -- 11062
+format.name$ -- 154
+if$ -- 24758
 int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 298
-newline$ -- 174
-num.names$ -- 30
-pop$ -- 473
+int.to.str$ -- 29
+missing$ -- 285
+newline$ -- 168
+num.names$ -- 29
+pop$ -- 458
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 564
+skip$ -- 541
 stack$ -- 0
-substring$ -- 29096
-swap$ -- 776
+substring$ -- 28112
+swap$ -- 744
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 5
-while$ -- 316
-width$ -- 32
-write$ -- 371
+while$ -- 302
+width$ -- 31
+write$ -- 358
 (There was 1 error message)
