@@ -246,23 +246,82 @@ Using machine learning, we predict functional and metabolic traits of bacteria a
 
 % Use "Eq" instead of "Equation" for equation citations.
 \section*{Introduction}
-The increasing ease of genetic sequencing has led to an explosion in the amount of such data generated. In the context of microbial ecology, large-scale metagenomic studies such as the Human Microbiome Project~\cite{Huttenhower2012}, the Earth Microbiome Project~\cite{Gilbert2014} and the Tara Oceans Project~\cite{Zhang2015} have systematically sequenced the microbial communities in a huge variety of environments at great depth. Amplicon sequencing, such as of the 16S rRNA gene, allows detailed study of the taxonomic makeup of these communities, while shotgun metagenomic sequencing allows characterisation of all genes present in an environment. Increasing depth of coverage and improvements in genome binning algorithms for clustering contigs into genomes, in particular the use of differential coverage across different samples~\cite{Alneberg2014, Eren2015}, are allowing more and more full and partial genomes to be assembled from shotgun metagenomic studies. Many of these organisms are novel and uncultured, having never been studied in a lab. A recent metagenomic study on aquifer systems~\cite{Anantharaman2016}, for example, reconstructed 2540 separate high-quality, near-complete genomes, and claimed to have discovered an astonishing 47 new phylum-level lineages among them.
+Predicting phenotype from genotype remains one of the major challenges in biology. Addressing this challenge is particularly relevant for understanding
+microbial communities, the study of which had been boosted by an increased ability to
+acquire genomic data~\cite{Green2008,Martiny2015}. The increasing ease of genetic sequencing has led to an explosion in the amount of such data generated. In the context of microbial ecology, large-scale metagenomic studies such as the Human Microbiome Project~\cite{Huttenhower2012}, the Earth Microbiome Project~\cite{Gilbert2014} and the Tara Oceans Project~\cite{Zhang2015} have systematically sequenced the microbial communities in a huge variety of environments at great depth. Amplicon sequencing, such as of the 16S rRNA gene, allows detailed study of the taxonomic makeup of these communities, while shotgun metagenomic sequencing allows characterisation of all genes present in an environment. Increasing depth of coverage and improvements in genome binning algorithms for clustering contigs into genomes, in particular the use of differential coverage across different samples~\cite{Alneberg2014, Eren2015}, are allowing more and more full and partial genomes to be assembled from shotgun metagenomic studies. Many of these organisms are novel and uncultured, having never been studied in a lab. A recent metagenomic study on aquifer systems~\cite{Anantharaman2016}, for example, reconstructed 2540 separate high-quality, near-complete genomes, and claimed to have discovered an astonishing 47 new phylum-level lineages among them.
 
-Interpretation of these results is time-consuming and difficult, and cannot keep up with the rate of data being generated. In particular, we would like to know the phenotypic traits and, hence, ecological roles, of these novel organisms, many of which will have no cultured relatives. As such, automated ways to associate genomic data with phenotypic features are required. There are a variety of tools and databases for annotating genes in genomes e.g. the Kyoto Encyclopedia of Genes and Genomes (KEGG)~\cite{Kanehisa2017}, the Pfam database of protein families~\cite{Finn2016} and the NCBI COG database of orthologous genes~\cite{Tatusov1997}. These functional annotations are often associated with higher level metabolic pathways in the databases but converting these to an actual prediction of 
-phenotype still relies on manually studying particular genes of interest in a time consuming process whose accuracy is not easily quantifiable.
+Converting this exponentially growing genetic data into functional understanding of microbial communities
+requires us to map physiological functions encoded in metagenomes (de Widder??). This mapping would allow inferring key functions in microbial
+communities found in human and animal guts, soil, and the oceans, and how these functions
+change over ecological conditions and with time (de Widder??). In
+turn, this ability, could allow us to discerning ecological adaptations in environmental
+microbial communities, as well as achieving functional mechanistic models of stability and
+function~\cite{Louca2016c}, towards managing communities underpinning human
+and animal health and biogeochemical cycles.
 
-%There are automated tools for interfacing with these databases, for example %PICRUSt~\cite{Langille2013}, which performs ancestral state reconstruction to link 16S %sequences with full genomes using the KEGG orthology. 
 
-In the interest of developing a way to automatically gain an overview of phenotypic and functional characteristics associated with the results of metagenomic studies, we here present a method of using existing knowledge of phenotypes associated with microbial taxa to make predictions about new organisms based on their genomes.
+Efforts to achieve phenotype-genotype mapping from metagenomics data has so far mostly
+focussed on phylogenetic assignments using the 16S gene. This highly conserved
+gene can provide a phylogenetic assignment at the species (or higher) level, which can then
+be used to infer general functional traits. While this approach has been commonly used to
+study ecological distribution of microbial functions e.g.~\cite{Philippot2009,Louca2016a,Louca2016b}, its premise of a direct association of function with phylogenetic assignment (i.e.
+‘functional coherence of microbial taxa’) has been questionable (e.g.~\cite{Philippot2010}).
+The level of taxonomic coherence of function is not clear even for strains of the same species,
+where functions can show high variability either due to few genetic changes or even
+regulatory changes~\cite{Martiny2015}; ~\cite{Sabarly2011} discusses this for \emph{E. coli}. It
+is also a common problem that when certain taxonomic groups in a microbial community are
+found to show direct associations with certain ecological factors (or health state of an host),
+these groups are so broad that assigning specific functions to them is hard or impossible~\cite{Koeppel2012}. Indeed, a study of specific functional traits
+across microbial taxa has found that many of these traits are dispersed across the
+phylogenetic tree~\cite{Martiny2015,Martiny2013}. Even where a specific functional trait is taxonomically coherent, the
+phylogenetic approach is limited by our ability to assign taxonomy based on the 16s gene.
+The extensive accumulation of metagenomics data indicates that we have sampled only a
+fraction of microbial diversity, and it is not uncommon for such data to result in many
+unassigned taxa, as for example by the aquifer study described above which described dozens of apparently novel phyla.
 
-To do this, we utilised a recently published database, the FAPROTAX database~\cite{Louca2016,Louca2017}, of phenotypes known to be associated with certain microbial taxa, based on an extensive survey of the scientific literature. The aim of creating this database was to allow microbes found from 16S rRNA amplicon sequencing to be assigned into functional and metabolic groups, so that functional variation across environemnts could be studied and compared to taxonomic variation. The authors found that abundance of functional groups was strongly influenced by environmental conditions in a variety of ocean environments~\cite{Louca2016a}. The bulk of the classifications in the FAPROTAX database come from \emph{Bergey's Manual of Systematic Bacteriology}~\cite{Whitman}, and it currently contains 84 phenotypic traits associated with 4600 microbial taxonomic groups. We wanted to allow the information contained in the database to be used to analyse novel genomes produced in shotgun sequencing studies, giving us the ability to make predictions about their functional roles. To do this, we combined this existing database with genomes downloaded from the NCBI and used machine learning to train statistical models able to infer an organism's traits from a vector of 
-genes annotated to functional groups. Machine learning techniques, such as logistic regression and support vector machines (SVMs) have previously been used in bioinformatics to infer phenotypic information from gene sequences, for example using SVMs on amino acid k-mer frequencies to predict protein function~\cite{Leslie2002,Cai2003,Someya2010}. A recent paper~\cite{Asgari2015} achieved good results in this task with recurrent neural networks, which can classify proteins directly from their sequences without the need for feature extraction. 
 
-Here, we use the presence of known gene orthologs, for example from the KEGG database, to train models of the phenotype of whole organisms. This work was inspired by a recent software famework, Traitar~\cite{Weimann2016}, which uses SVMs to predict microbial traits based on genomic information in the form of copy numbers of Pfam families. Our work differs from Traitar in the use of the highly detailed FAPROTAX database. Traitar utilised the Global Infectious Disease and Epidemiology Online Network (GIDEON)~\cite{Berger2005} for its phenotypic annotations, and was therefore biased toward pathogenic traits; we instead focus on traits associated with metabolism and environmental niche. Additionally, we have a significantly larger training set---genomes from all 9407 unique species having a genome classified as `full' in the NCBI database---whereas Traitar used 234. The size of the training set is usually expected to have significant impact on the performance of a machine learning model.
+While reconstruction of genomes from metagenomics data reveals the limitation of
+taxonomic functional assignment, it also opens up a new route to functional assignments. In
+particular, several methods and bioinformatics pipelines are now emerging that aim to go
+from raw metagenomics sequence data to binned (i.e. predicted) genomes to functions, e.g.~\cite{Narayanasamy2016}. The functional annotation steps in these tools usually considers
+specific gene(s) that are known to associate with specific functions or metabolic pathways~\cite{Narayanasamy2016}, as identified for example in databases such as the Kyoto
+Encyclopedia of Genes and Genomes 22 (KEGG)~\cite{Kanehisa2017}, the Pfam database of protein families~\cite{Finn2016} and the NCBI COG database of orthologous genes~\cite{Tatusov1997}. This approach circumvents the
+problems of taxonomic coherence and 16s gene based assignment to taxa, yet relies heavily on existing categorization of genes into functions as done in the above databases. While these
+functional gene groupings are mostly based on accumulated knowledge and experimental
+data on metabolic pathways, they might miss full set of associated genes with a given
+function and do not consider functions that cannot be assigned to few genes or seemingly
+well-organised pathways. One possible route to overcoming such possible limitations is to
+develop extensive databases of phenotypic traits of microbes without necessarily using a
+pathway-centric view. These functional assignments could then serve as a source to apply
+statistical approaches to `learn' genetic drivers of those functions
+using genomes of associated microbes. Efforts in this direction have recently resulted in
+compilation of literature-based assignment of functions in microbes, either covering a large
+selection of functions and organisms~\cite{Louca2016,Louca2017} or specific ones such as
+methanogenesis~\cite{ukaszewicz2015}. The FAPROTAX database~\cite{Louca2016}, which we focus on here, is based on an extensive survey of the scientific literature. The aim of creating this database was to allow microbes found from 16S rRNA amplicon sequencing to be assigned into functional and metabolic groups, so that functional variation across environemnts could be studied and compared to taxonomic variation. The authors found that abundance of functional groups was strongly influenced by environmental conditions in a variety of ocean environments~\cite{Louca2016a}. The bulk of the classifications in the FAPROTAX database come from \emph{Bergey's Manual of Systematic Bacteriology}~\cite{Whitman}, and it currently contains 84 phenotypic traits associated with 4600 microbial taxonomic groups.
 
-We show that models so trained have a good accuracy at determining the phenotype of an unknown species over many functions, with 65 functions out of 84 achieving an AUROC score above 90\%. In particular, in many cases the classification accuracy is superior to using manually-curated `KEGG modules', which are small groups of genes in the KEGG database known to be associated with a particular function. We also compare the performance of a variety of machine learning models at this task, and of using two different genome annotation frameworks, the KEGG ortholog scheme and the Pfam protein family database. 
+Here, we used this accumulating function-organism associations and develop an algorithmic
+approach to identify genetic markers, or classifiers, of phenotypic functions. To do this, we combined this existing database with genomes downloaded from the NCBI and used machine learning to train statistical models able to infer an organism's traits from a vector of 
+genes annotated to functional groups. Machine learning techniques, such as logistic regression and support vector machines (SVMs) have previously been used in bioinformatics to infer phenotypic information from gene sequences, for example using SVMs on amino acid k-mer frequencies to predict protein function~\cite{Leslie2002,Cai2003,Someya2010}. A recent paper~\cite{Asgari2015} achieved good results in this task with recurrent neural networks, which can classify proteins directly from their sequences without the need for feature extraction.
 
-We then go on to use these models to predict the phenotypes of so-called MAGs (metagenome assembled genomes), genomes assembled from metagenomic studies and otherwise unstudied, from three diverse environments: anaerobic digesters, ground water aquifers and the ocean.  
+Here, we use the presence of known gene orthologs, for example from the KEGG
+database, to train models of the phenotype of whole organisms. This work was inspired by a
+recent software famework, Traitar~\cite{Weimann2016}, which uses SVMs to predict
+microbial traits based on genomic information in the form of copy numbers of Pfam families.
+Our work differs from Traitar in the use of the highly detailed FAPROTAX database. Traitar
+utilised the Global Infectious Disease and Epidemiology Online Network
+(GIDEON)~\cite{Berger2005} for its phenotypic annotations, and was therefore biased
+toward pathogenic traits; we instead focus on traits associated with metabolism and
+environmental niche. Additionally, we have a significantly larger training set-- -genomes from
+all 9407 unique species having a genome classified as `full' in the NCBI database-- -whereas
+Traitar used 234. The size of the training set is usually expected to have significant impact on
+the performance of a machine learning model.
+
+ We find that these classifiers perform better
+than simple taxonomic assignments of function, and reveal both known and new genetic
+drivers of specific functions. Using these resulting classifiers for over 80 functions, we then
+analyzed three recent, large-scale metagenomics datasets from three diverse environments:
+anaerobic digesters, ground water aquifers and the ocean. The classifier-based functional
+analysis of these datasets revealed significant differences in functional properties between environments and conditions.
 
 
 \section*{Materials and methods}

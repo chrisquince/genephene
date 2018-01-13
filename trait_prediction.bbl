@@ -1,5 +1,16 @@
 \begin{thebibliography}{10}
 
+\bibitem{Green2008}
+Green JL, Bohannan BJM, Whitaker RJ.
+\newblock {Microbial biogeography: from taxonomy to traits.}
+\newblock Science (New York, NY). 2008;320(5879):1039--43.
+\newblock doi:{10.1126/science.1153475}.
+
+\bibitem{Martiny2015}
+Martiny JBH, Jones SE, Lennon JT, Martiny AC.
+\newblock {Microbiomes in light of traits: A phylogenetic perspective}.
+\newblock Science. 2015;350(6261).
+
 \bibitem{Huttenhower2012}
 Huttenhower C, Gevers D, Knight R, Abubucker S, Badger JH, Chinwalla AT, et~al.
 \newblock {Structure, function and diversity of the healthy human microbiome}.
@@ -39,6 +50,68 @@ Anantharaman K, Brown CT, Hug LA, Sharon I, Castelle CJ, Probst AJ, et~al.
 \newblock Nature Communications. 2016;7:13219.
 \newblock doi:{10.1038/ncomms13219}.
 
+\bibitem{Louca2016c}
+Louca S, Hawley AK, Katsev S, Torres-Beltran M, Bhatia MP, Kheirandish S,
+  et~al.
+\newblock {Integrating biogeochemistry with multiomic sequence information in a
+  model oxygen minimum zone}.
+\newblock Proceedings of the National Academy of Sciences.
+  2016;113(40):E5925--E5933.
+\newblock doi:{10.1073/pnas.1602897113}.
+
+\bibitem{Philippot2009}
+Philippot L, Bru D, Saby NPA, {\v{C}}uhel J, Arrouays D, {\v{S}}imek M, et~al.
+\newblock {Spatial patterns of bacterial taxa in nature reflect ecological
+  traits of deep branches of the 16S rRNA bacterial tree}.
+\newblock Environmental Microbiology. 2009;11(12):3096--3104.
+\newblock doi:{10.1111/j.1462-2920.2009.02014.x}.
+
+\bibitem{Louca2016a}
+Louca S, Parfrey LW, Doebeli M.
+\newblock {Decoupling function and taxonomy in the global ocean microbiome.}
+\newblock Science (New York, NY). 2016;353(6305):1272--7.
+\newblock doi:{10.1126/science.aaf4507}.
+
+\bibitem{Louca2016b}
+Louca S, Doebeli M.
+\newblock {Reaction-centric modeling of microbial ecosystems}.
+\newblock Ecological Modelling. 2016;335:74--86.
+\newblock doi:{10.1016/J.ECOLMODEL.2016.05.011}.
+
+\bibitem{Philippot2010}
+Philippot L, Andersson SGE, Battin TJ, Prosser JI, Schimel JP, Whitman WB,
+  et~al.
+\newblock {The ecological coherence of high bacterial taxonomic ranks}.
+\newblock Nature Reviews Microbiology. 2010;8(7):523--529.
+\newblock doi:{10.1038/nrmicro2367}.
+
+\bibitem{Sabarly2011}
+SABARLY V, BOUVET O, GLODT J, CLERMONT O, SKURNIK D, DIANCOURT L, et~al.
+\newblock {The decoupling between genetic structure and metabolic phenotypes in
+  Escherichia coli leads to continuous phenotypic diversity}.
+\newblock Journal of Evolutionary Biology. 2011;24(7):1559--1571.
+\newblock doi:{10.1111/j.1420-9101.2011.02287.x}.
+
+\bibitem{Koeppel2012}
+Koeppel AF, Wu M.
+\newblock {Lineage-dependent ecological coherence in bacteria}.
+\newblock FEMS Microbiology Ecology. 2012;81(3):574--582.
+\newblock doi:{10.1111/j.1574-6941.2012.01387.x}.
+
+\bibitem{Martiny2013}
+Martiny AC, Treseder K, Pusch G.
+\newblock {Phylogenetic conservatism of functional traits in microorganisms}.
+\newblock The ISME Journal. 2013;7(4):830--838.
+\newblock doi:{10.1038/ismej.2012.160}.
+
+\bibitem{Narayanasamy2016}
+Narayanasamy S, Jarosz Y, Muller EEL, Heintz-Buschart A, Herold M, Kaysen A,
+  et~al.
+\newblock {IMP: a pipeline for reproducible reference-independent integrated
+  metagenomic and metatranscriptomic analyses.}
+\newblock Genome biology. 2016;17(1):260.
+\newblock doi:{10.1186/s13059-016-1116-8}.
+
 \bibitem{Kanehisa2017}
 Kanehisa M, Furumichi M, Tanabe M, Sato Y, Morishima K.
 \newblock {KEGG: new perspectives on genomes, pathways, diseases and drugs}.
@@ -71,11 +144,13 @@ Louca S, Jacques SMS, Pires APF, Leal JS, Gonz{\'{a}}lez AL, Doebeli M, et~al.
 \newblock Environmental Microbiology. 2017;19(8):3132--3151.
 \newblock doi:{10.1111/1462-2920.13788}.
 
-\bibitem{Louca2016a}
-Louca S, Parfrey LW, Doebeli M.
-\newblock {Decoupling function and taxonomy in the global ocean microbiome.}
-\newblock Science (New York, NY). 2016;353(6305):1272--7.
-\newblock doi:{10.1126/science.aaf4507}.
+\bibitem{ukaszewicz2015}
+{\L}ukaszewicz M, Jab{\l}o{\'{n}}ski S, Rodowicz P.
+\newblock {Methanogenic archaea database containing physiological and
+  biochemical characteristics}.
+\newblock International Journal of Systematic and Evolutionary Microbiology.
+  2015;65(4):1360--1368.
+\newblock doi:{10.1099/ijs.0.000065}.
 
 \bibitem{Whitman}
 Whitman WB, {Bergey's Manual Trust}, {Wiley Online Library (Online service)}.
@@ -134,6 +209,12 @@ Buchfink B, Xie C, Huson DH.
 \newblock Nature Methods. 2014;12(1):59--60.
 \newblock doi:{10.1038/nmeth.3176}.
 
+\bibitem{Eddy2011}
+Eddy SR.
+\newblock {Accelerated Profile HMM Searches}.
+\newblock PLoS Computational Biology. 2011;7(10):e1002195.
+\newblock doi:{10.1371/journal.pcbi.1002195}.
+
 \bibitem{Hastie2009a}
 Hastie T, Tibshirani R, Friedman J.
 \newblock {Linear Methods for Classification}.
@@ -177,10 +258,5 @@ Flach P, Hern{\'{a}}ndez-Orallo J, Ferri C.
 \newblock Proceedings of the 28th International Conference on Machine Learning,
   Bellevue, WA, USA. 2011; p. 657--664.
 \newblock doi:{10.1145/347090.347126}.
-
-\bibitem{Martiny2015}
-Martiny JBH, Jones SE, Lennon JT, Martiny AC.
-\newblock {Microbiomes in light of traits: A phylogenetic perspective}.
-\newblock Science. 2015;350(6261).
 
 \end{thebibliography}

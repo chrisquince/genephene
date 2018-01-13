@@ -2,14 +2,15 @@ This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: trait_prediction.aux
 The style file: plos2015.bst
-Illegal, another \bibstyle command---line 76 of file trait_prediction.aux
+Illegal, another \bibstyle command---line 93 of file trait_prediction.aux
  : \bibstyle
  :          {plos2015}
 I'm skipping whatever remains of this command
 Database file #1: trait_prediction.bib
 Database file #2: others.bib
-Warning--I didn't find a database entry for "Eddy2011"
 Warning--I didn't find a database entry for "Hastie2009b"
+Warning--I didn't find a database entry for "delmont2017"
+Warning--I didn't find a database entry for "sunagawa05"
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
@@ -19,45 +20,45 @@ Warning--there's a month but no year in Whitman
 Warning--missing publisher in Hastie2009a
 Warning--empty pages in Lee2006
 Warning--missing publisher in Hastie2009
-You've used 29 entries,
+You've used 40 entries,
             3058 wiz_defined-function locations,
-            881 strings with 18688 characters,
-and the built_in function-call counts, 108580 in all, are:
-= -- 13025
-> -- 508
+            980 strings with 22924 characters,
+and the built_in function-call counts, 135317 in all, are:
+= -- 16471
+> -- 704
 < -- 5
-+ -- 437
-- -- 127
-* -- 10525
-:= -- 11914
-add.period$ -- 130
-call.type$ -- 29
++ -- 559
+- -- 176
+* -- 12871
+:= -- 14791
+add.period$ -- 185
+call.type$ -- 40
 change.case$ -- 6
 chr.to.int$ -- 0
-cite$ -- 34
-duplicate$ -- 4798
-empty$ -- 11062
-format.name$ -- 154
-if$ -- 24758
+cite$ -- 45
+duplicate$ -- 6937
+empty$ -- 13595
+format.name$ -- 213
+if$ -- 30970
 int.to.chr$ -- 0
-int.to.str$ -- 29
-missing$ -- 285
-newline$ -- 168
-num.names$ -- 29
-pop$ -- 458
+int.to.str$ -- 40
+missing$ -- 400
+newline$ -- 234
+num.names$ -- 40
+pop$ -- 605
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 541
+skip$ -- 736
 stack$ -- 0
-substring$ -- 28112
-swap$ -- 744
+substring$ -- 33678
+swap$ -- 1036
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 5
-while$ -- 302
-width$ -- 31
-write$ -- 358
+while$ -- 426
+width$ -- 42
+write$ -- 501
 (There was 1 error message)
