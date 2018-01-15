@@ -358,12 +358,12 @@ We applied our classifier to three separate collections of MAGs from three diffe
 \begin{itemize}
 
 \item Tara Oceans MAG collection: This comprised a subset of 660 MAGs from the collection 
-of 957 non-redundant MAGs generated from the Tara Oceans microbiome in Delmont {\it et al.}~\cite{delmont2017}. These 660 MAGs were those which had at least 75\% of the 36 single-copy prokaryotic core genes identified in Alneberg {\it et al.} \cite{Alneberg2014} in a single-copy and can thus be considered reasonably complete and pure prokaryotic genomes. The Tara Oceans microbiome survey generated 7.2 terabases of metagenomic data from 243 samples across 68 locations from epipelagic and mesopelagic waters around the globe \cite{sunagawa05}, Delmont {\it et al.} extracted their MAGs from a subset of 93 of these samples, 61 surface samples and 32 from the deep chlorophyll maximum layer. Therefore these MAGs represent a substantial sample of planktonic microbial life.
+of 957 non-redundant MAGs generated from the Tara Oceans microbiome in Delmont {\it et al.}~\cite{Delmont2017}. These 660 MAGs were those which had at least 75\% of the 36 single-copy prokaryotic core genes identified in Alneberg {\it et al.} \cite{Alneberg2014} in a single-copy and can thus be considered reasonably complete and pure prokaryotic genomes. The Tara Oceans microbiome survey generated 7.2 terabases of metagenomic data from 243 samples across 68 locations from epipelagic and mesopelagic waters around the globe \cite{Sunagawa2015}, Delmont {\it et al.} extracted their MAGs from a subset of 93 of these samples, 61 surface samples and 32 from the deep chlorophyll maximum layer. Therefore these MAGs represent a substantial sample of planktonic microbial life.
 
 \item Anaerobic digester (AD) MAG collection: This comprised a collection of 153 MAGs that were constructed by co-assembly and binning of 95 metagenome samples taken from three 
 replicate laboratory anaerobic digestion (AD) bioreactors converting distillery waste into biogas. They were assembled with \texttt{Ray} using a kmer size of 41 and all 186,081 contig fragments greater than $2 kbp$ in length were clustered by \texttt{CONCOCT} \cite{Alneberg2014} generating a total of 355 bins of which 153 were 75\% pure and complete and used in this analysis. 
 
-\item Candidate phyla radiation (CPR) MAG collection: This collection of 581 MAGs is a subset of 797 MAGs provided by the authors of Brown et al. 2015. They comprise members 
+\item Candidate phyla radiation (CPR) MAG collection: This collection of 581 MAGs is a subset of 797 MAGs provided by the authors of Brown \emph{et al.} 2015~\cite{Brown2015}. They comprise members 
 of the Candidate phyla radiation (CPR) assembled from ground water enriched with acetate.
 
 \end{itemize} 
@@ -381,7 +381,7 @@ The AUROC score on each classification task (each function) is shown for three c
 \label{fig1}
 \end{figure}
 
-Additionally, we can compare the results we obtain using different gene ortholog schemes, that is KEGG orthologs and Pfam families. The results using the two schemes are rather similar, though there are some functions where one outperforms the other; this may reflect better coverage of the genes involved in the function in a particular scheme. On average, KO performs better, with a mean score of 90.1\% versus 84.9\% for Pfam (p<0.1\%), and we therefore concentrate on the KO scheme for the remainder of the paper.
+Additionally, we can compare the results we obtain using different gene ortholog schemes, that is KEGG orthologs and Pfam families. The results using the two schemes are rather similar, though there are some functions where one outperforms the other; this may reflect better coverage of the genes involved in the function in a particular scheme. On average, KO performs better, with a mean score of 90.1\% versus 84.9\% for Pfam ($p<0.001$), and we therefore concentrate on the KO scheme for the remainder of the paper.
 
 \begin{figure}[!h]
 \includegraphics[width=0.9\textwidth]{orth_compare}
@@ -397,6 +397,8 @@ Table~\ref{tab1} shows the KEGG orthologs with non-zero coefficients used by the
 Looking at some more complex traits, for example sulfate respiration (i.e. disimmilatory sulfate reduction to H$_{2}$S), the model assigns a lot of weight to subunits of a quinone-modifying oxidoreductase, which is indeed associated with sulfur metabolism [REF]. Interestingly, however, none of the genes picked out by the classifier are directly part of the metabolic pathway for this process as described in the KEGG module for dissimilatory sulfate reduction, see Figure~\ref{fig2}. The situation is similar with hydrogenotrophic methanogenesis, with classification mostly determined by components of energy-converting hydrogenases which are not directly part of the autotrophic methanogenesis pathway, along with \emph{mcr} genes indicating that the microbe is a methanogen.  
 
 Figure~\ref{fig3} shows a scatter plot of AUROC score (i.e. classifier performance) against the number of orthologs used to make the prediction. It can be seen that there is a correlation between these two variables, with some highly accurate classifiers built out of a large number of genes. However, there is also a noticable cluster of functions with high accuracy achieved with only a few genes (less than 100). These functions may be particularly interesting, as it is more likely that these small groups of orthologs are causally associated with the function, rather than just being genes which typically occur in parts of the phylogenetic tree which have the function and may or may not have any direct relation to it. This issue is explored further in the section on performance across taxa, below. Also, note that most of the functions that perform poorly, which typically use very few genes to classify, have very low support in the training data in terms of number of positive examples.
+
+Finally, Figure~\ref{tsne} shows an ordination plot of all the species in the training and test sets using their KEGG ortholog copy numbers. That is, a dimensionality reduction algorithm, here stochastic neighbour embedding, has been applied to allow variation in all KO copy numbers in two dimensions. Points are colored by whether they are true positive, true negative, false positive or false negatives under a particular classification task, here for sulfate respiration. It can be seen that the species performing this function do tend to cluster together into a few groups in the KO space, allowing our algorithm to classify them mostly correctly. 
 
 \begin{table}
 \scriptsize
@@ -445,6 +447,13 @@ Representations of the KEGG modules corresponding to the FAPROTAX functions show
 \caption{{\bf Classifier performance and complexity.}
 Scatterplot showing the AUROC score of the different classifiers plotted against the number of gene orthologs the classifier uses to make its predictions. Point size is proportional to the number of positive examples in the training set.}
 \label{fig3}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=0.7\textwidth]{tsne}
+\caption{{\bf Stochastic neighbour embedding of all species in KEGG ortholog space}
+Ordination in two dimensions of all the species in our training dataset. By coloring by classification group (true positive, true negative, false positive, false negative) for a particular function, here sulfate respiration, we can graphically visualise the behaviour of our classifier.}
+\label{tsne}
 \end{figure}
 
 \subsection*{Comparison to KEGG modules}
@@ -526,6 +535,8 @@ These differences in function might well be expected between these environents. 
 
 Some of the functional assignments seem strange, for example organisms being classified as acetoclastic or hydrogenotrophic methanogens but not as methanogens, including a significant proportion of CPR organisms (about 3\%), which are bacteria, being classified as acetoclastic methanogens. Looking at the gene orthologs present in these organisms and their taxonomic assignments sheds some light on what is going on here, see Table~\ref{tab3}. For example, some of the acetoclastic methanogens which are misclassified as not being methanogens are missing the \emph{mcrA} ortholog K00399, presumably because the MAGs are incomplete and this gene has been missed. Another example is an organism classified as being a hydrogenotrophic methanogen but not a methanogen. This MAG appears to be from the bacterium \emph{Caldisericum exile}, which is not a methanogen and does not possess \emph{mcrA} (it is an anaerobic, thermophilic bacterium which respires by thiosulfate reduction~\ref{Mori2009}). However, it does possess genes for subunits of the energy-converting hydrogenase A, noted earlier (Table~\ref{tab1}) to be incidative of hydrogenotrophic methanogenesis. Therefore, these discrepancies may be the result either of incomplete MAGs, or of combinations of genes which are rare or unseen in the training set.
 
+For the Tara dataset, metadata for different samples was available. Combining the coverages of the different MAGs across these samples with the functional assignments of the MAGs, we can calculate the proportion of total coverage which comes from microbes with a given function. Figure~\ref{oceans} shows the mean of this metric for all the functions for samples from different oceans. The differences do not seem to be very significant between oceans, with a few exceptions, notably an abundance of nitrate reduction in the Southern Ocean. Samples metadata included depth, temperature and salinity, among other measurements. Figure~\ref{corr_tara} shows the correlation between temperature and fermenter abundance, showing a rather large negative correlation (Pearson correlation $r=-0.43, p<0.001$).
+
 \begin{table}
 \scriptsize
 \csvautotabular{datafiles/methanogen_mag_details.csv}
@@ -533,6 +544,20 @@ Some of the functional assignments seem strange, for example organisms being cla
 \caption{{\bf Key genes and predicted functions for MAGs predicted to be methanogens.}
 Gene copy numbers for the \emph{mcrA} methanogenesis gene and the energy-converting hyrdogenase A, along with functional predictions, for AD MAGs predicted to be mathanogenic by our algorithm.}\label{tab3}
 \end{table}
+
+\begin{figure}
+\includegraphics[width=0.9\textwidth]{oceans}
+\caption{{\bf Mean abundance of microbes performing functions by ocean.}
+Average of the proportion of total coverage associated with microbes performing a function over samples from each of the oceans.}
+\label{oceans}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=0.9\textwidth]{temp_corr_tara}
+\caption{{\bf Association of temperature and fermenter abundance.}
+Scatterplot of proportion of total coverage associated with microbes performing fermentation versus mean temperature of a sample. Pearson $r=-0.43, p<0.001$.}
+\label{corr_tara}
+\end{figure}
 
 
 \section*{Discussion}
