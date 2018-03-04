@@ -115,6 +115,9 @@
 
 %further packages (not from PLoS template)
 \usepackage{csvsimple}
+\usepackage{float}
+\usepackage[caption = false]{subfig}
+
 
 % create "+" rule type for thick vertical lines
 \newcolumntype{+}{!{\vrule width 2pt}}
@@ -365,20 +368,13 @@ Figure~\ref{fig1} shows the performance of the algorithm in the classification t
 
 % Place figure captions after the first paragraph in which they are cited.
 \begin{figure}[!h]
-\includegraphics[width=0.9\textwidth]{algo_compare}
+\includegraphics[width=0.9\textwidth]{fig1}
 \caption{{\bf Overall performance of classification algorithms.}
 The AUROC score on each classification task (each function) is shown for three classification algorithms: $\ell$1-regularized logistic regression, the random forest and a linear support vector machine (SVM). Functions are ordered by the LR score.}
 \label{fig1}
 \end{figure}
 
-Additionally, we can compare the results we obtain using different gene ortholog schemes, that is KEGG orthologs and Pfam families. The results using the two schemes are rather similar, though there are some functions where one outperforms the other; this may reflect better coverage of the genes involved in the function in a particular scheme. On average, KO performs better, with a mean score of 90.1\% versus 84.9\% for Pfam ($p<0.001$), and we therefore concentrate on the KO scheme for the remainder of the paper.
-
-\begin{figure}[!h]
-\includegraphics[width=0.9\textwidth]{orth_compare}
-\caption{{\bf Performance of classification algorithms using different ortholog schemes.}
-The AUROC score on each classification task (each function) is shown for algorithms trained on two representations of genomes in terms of orthologous groups of genes, the KEGG orthology (KO) and Pfam protein families.}
-\label{fig1}
-\end{figure}
+Additionally, we can compare the results we obtain using different gene ortholog schemes, that is KEGG orthologs and Pfam families, see~\ref{orth-comp}. The results using the two schemes are rather similar, though there are some functions where one outperforms the other; this may reflect better coverage of the genes involved in the function in a particular scheme. On average, KO performs better, with a mean score of 90.1\% versus 84.9\% for Pfam ($p<0.001$), and we therefore concentrate on the KO scheme for the remainder of the paper.
 
 
 \subsection*{Gene orthologs used by classifiers}
@@ -433,18 +429,11 @@ Representations of the KEGG modules corresponding to the FAPROTAX functions show
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=0.7\textwidth]{fig3}
-\caption{{\bf Classifier performance and complexity.}
-Scatterplot showing the AUROC score of the different classifiers plotted against the number of gene orthologs the classifier uses to make its predictions. Point size is proportional to the number of positive examples in the training set.}
-\label{fig3}
+\subfloat{\includegraphics[width=0.48\textwidth]{fig3}}
+\subfloat{\includegraphics[width=0.48\textwidth]{fig6}}
+ \caption{Scatterplots showing the AUROC score of the different classifiers plotted against the number of gene orthologs the classifier uses to make its predictions. Point size is proportional to the number of positive examples in the training set. Left: in the standard case. Right: in the cross-taxa case.}\label{fig3}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=0.7\textwidth]{tsne}
-\caption{{\bf Stochastic neighbour embedding of all species in KEGG ortholog space}
-Ordination in two dimensions of all the species in our training dataset. By coloring by classification group (true positive, true negative, false positive, false negative) for a particular function, here sulfate respiration, we can graphically visualise the behaviour of our classifier.}
-\label{tsne}
-\end{figure}
 
 \subsection*{Comparison to KEGG modules}
 It is instructive to compare the performance of our classifiers to the use of KEGG modules, where an equivalent module exists for that function, i.e. compare the performance to a `classifier' where an organism is judged capable of a function if it has a complete KEGG module for that function. Table~\ref{tab2} shows the results of this comparison for three FAPROTAX functions with corresponding KEGG modules. Note that the KEGG module method does not require training, so the metrics are over the entire NCBI dataset, whereas for the classifier they are only for the held-out test set. Also, the former method gives only presence/absence of a function rather than a probability, so the AUROC score cannot be calculated, so we use alternative metrics based on classification: the $F_1$ score and the confusion matrix.
@@ -482,23 +471,9 @@ Taxonomic trees of all prokaryotic NCBI species with full genomes. For training 
 
 To investigate this phenomenon and attempt to find orthologs with real causal associations with functions, we tried training a model on one taxa and testing its performance on the others. If a classifier can predict phenotype based on genes in a distantly-related, unseen set of organisms, it is likely the genes it is using have a real association with the function. In particular, we tried training our logistic regression models on the Proteobacteria, a large phylum of bacteria, and testing on the rest of the taxonomy. Some functions did not have significant numbers of species in each of these sets; we used only functions with at least 5 species in the training set and 5 in the test, leaving 59 functions out of 84. 
 
-As might be expected, our classifiers performed significantly worse in this case, compared to being trained on a random selection of species from throughout the prokaryotic part of the tree of life, see Figure~\ref{fig5}. However, for a significant number of functions the performance of the classsifier is still fairly good, indicating an ability to make predictions which are generalizable to significantly different unseen groups of organisms. 19 functions have an AUROC score greater than 80\%, and 9 greater than 90\%. 
+As might be expected, our classifiers performed significantly worse in this case, compared to being trained on a random selection of species from throughout the prokaryotic part of the tree of life, see Figure~\ref{fig3}b. However, for a significant number of functions the performance of the classsifier is still fairly good, indicating an ability to make predictions which are generalizable to significantly different unseen groups of organisms. 19 functions have an AUROC score greater than 80\%, and 9 greater than 90\%. 
 
-\begin{figure}[!h]
-\includegraphics[width=0.9\textwidth]{fig5b}
-\caption{{\bf Overall performance of classification algorithm in the cross-taxa case.}
-The AUROC score on each classification task (each function) is shown for the LR classifiers based on KOs for the case of random train/test splitting as in Figure~\ref{fig1}, and a classifier trained on the Proteobacteria and tested on all other organisms in the dataset.}
-\label{fig5}
-\end{figure}
-
-Figure~\ref{fig6} shows a scatter plot of classifier complexity against performance, as in Figure~\ref{fig3}. Notable is that the group of classifiers achieving high accuracy while using a lot of genes is gone: functions such as fermentation and nitrate reduction, which were in this group of classifiers, are now much less accurate. Classifiers which work well in the cross-taxa case all use a relatively small number of genes, less than 150 or so. This suggests that the classifiers using a large number of genes to make predictions in the randomized case may have been using a range of genes found in different closely-related clusters of organisms which all have the target trait, but which may not have a causal relationship with the function.
-
-\begin{figure}
-\includegraphics[width=0.7\textwidth]{fig6}
-\caption{{\bf Classifier performance and complexity, cross-taxa case.}
-Scatterplot showing the AUROC score of the different classifiers plotted against the number of gene orthologs used for the cross-taxa classifiers. Point size is proportional to the number of positive examples in the training set.}
-\label{fig6}
-\end{figure}
+Figure~\ref{fig3}b shows a scatter plot of classifier complexity against performance, as in Figure~\ref{fig3}a. Notable is that the group of classifiers achieving high accuracy while using a lot of genes is gone: functions such as fermentation and nitrate reduction, which were in this group of classifiers, are now much less accurate. Classifiers which work well in the cross-taxa case all use a relatively small number of genes, less than 150 or so. This suggests that the classifiers using a large number of genes to make predictions in the randomized case may have been using a range of genes found in different closely-related clusters of organisms which all have the target trait, but which may not have a causal relationship with the function.
 
 \subsection*{Prediction of MAG phenotypes}
 A major aim of trainig these classifiers is to explore the functional capabilities of novel genomes isolated from metagenomic studies. We therefore used the classifiers trained above to classify metagenomically assembled genomes (MAGs) from a few different environments. These were laboratory anaerobic digesters, the ocean (from the Tara oceans project~\cite{Zhang2015}), and MAGs from a groundwater aquifer assigned to be members of the so-called `canditate phyla radioation' (CPR)~\cite{Anantharaman2016}. The CPR is a set of bacterial lineages discovered from metagenomic studies consisting of a very large number of proposed novel phyla. These organisms have very small genomes, and may typically live in symbiosis with other organisms~\cite{Danczak2017}.
@@ -513,13 +488,6 @@ Results of running the set of LR classsifiers trained on NCBI genomes on MAGs as
 \end{figure}
 
 To make these differences clearer, Figure~\ref{mag-compare} is a bar chart showing the proportion of MAGs from the different environments having a function, for some of the most common functions. For many functions, the differences are very significant. 
-
-\begin{figure}
-\includegraphics[width=0.9\textwidth]{mag_comparison_bars_cpr}
-\caption{{\bf Overall comparison of AD, Tara and CPR MAGs.}
-Proportions of MAGS from the environments having a function, for some of the most common functions.}
-\label{mag-compare}
-\end{figure}
 
 These differences in function might well be expected between these environents. For example, fermentation is very important in the AD process, and aerobic chemoheterotrophy obviously is not as the environment is aerobic. This indicates that the method is acapable of producing useful information about MAGs. The results for the CPR MAGs indicate that these organisms possess significantly fewer functions than those from the other two environments, as would be expected from their very small genome sizes. A few functions do however have significant incidence in this group. Apart from `chemoheterotrophy' and `aerobic chemoheterotrophy', which are very broad categories encompassing a large proportion of all organisms, a few functions associated with nitrogen metabolism, especially nitrate reduction, are noticeably present in the group. That the CPR are involved in nitrate reduction was recently proposed in Danczak et al. ~\cite{Danczak2017}.
 
@@ -537,7 +505,7 @@ Gene copy numbers for the \emph{mcrA} methanogenesis gene and the energy-convert
 \end{table}
 
 \begin{figure}
-\includegraphics[width=0.9\textwidth]{oceans}
+\includegraphics[width=0.98\textwidth]{oceans}
 \caption{{\bf Mean abundance of microbes performing functions by ocean.}
 Average of the proportion of total coverage associated with microbes performing a function over samples from each of the oceans.}
 \label{oceans}
@@ -561,11 +529,35 @@ A major use we envisage for this method is the prediction of phenotypes of novel
 
 
 \section*{Supporting information}
-
 % Include only the SI item label in the paragraph heading. Use the \nameref{label} command to cite SI items in the text.
-\paragraph*{S1 Fig.}
-\label{S1_Fig}
-{\bf Bold the title sentence.} Add descriptive text after the title of the item (optional).
+
+\subsection*{Supplementary figures}
+
+\renewcommand{\thefigure}{S\arabic{figure}}
+
+\setcounter{figure}{0}
+
+\begin{figure}[!h]
+\includegraphics[width=0.9\textwidth]{orth_compare}
+\caption{{\bf Performance of classification algorithms using different ortholog schemes.}
+The AUROC score on each classification task (each function) is shown for algorithms trained on two representations of genomes in terms of orthologous groups of genes, the KEGG orthology (KO) and Pfam protein families.}
+\label{orth_comp}
+\end{figure}
+
+\begin{figure}
+\subfloat{\includegraphics[width=0.95\textwidth]{tsne}}\\
+\subfloat{\includegraphics[width=0.95\textwidth]{tsne_top_only}}
+\caption{{\bf Stochastic neighbour embedding of all species in KEGG ortholog space}
+Ordination in two dimensions of all the species in our training dataset. By coloring by classification group (true positive, true negative, false positive, false negative) for a particular function, here sulfate respiration, we can graphically visualise the behaviour of our classifier. Top: embedding performed over all KEGG orthologs. Bottom: embedding performed only over KOs relevant to the function according to the classifier.}
+\label{tsne}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=0.9\textwidth]{mag_comparison_bars_cpr}
+\caption{{\bf Overall comparison of AD, Tara and CPR MAGs.}
+Proportions of MAGS from the environments having a function, for some of the most common functions.}
+\label{mag-compare}
+\end{figure}
 
 
 
@@ -585,6 +577,7 @@ A major use we envisage for this method is the prediction of phenotypes of novel
 % step-by-step instructions.
 % 
 
+\clearpage
 \bibliographystyle{plos2015}
 \bibliography{trait_prediction,others}{}
 

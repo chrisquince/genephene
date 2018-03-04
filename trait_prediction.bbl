@@ -50,6 +50,12 @@ Anantharaman K, Brown CT, Hug LA, Sharon I, Castelle CJ, Probst AJ, et~al.
 \newblock Nature Communications. 2016;7:13219.
 \newblock doi:{10.1038/ncomms13219}.
 
+\bibitem{Widder2016}
+Widder S, Allen RJ, Pfeiffer T, Curtis TP, Wiuf C, Sloan WT, et~al.
+\newblock Challenges in microbial ecology: building predictive understanding of
+  community function and dynamics.
+\newblock The Isme Journal. 2016;10:2557 EP --.
+
 \bibitem{Louca2016c}
 Louca S, Hawley AK, Katsev S, Torres-Beltran M, Bhatia MP, Kheirandish S,
   et~al.
@@ -279,5 +285,22 @@ Brown CT, Hug LA, Thomas BC, Sharon I, Castelle CJ, Singh A, et~al.
   Bacteria}.
 \newblock Nature. 2015;523(7559):208--211.
 \newblock doi:{10.1038/nature14486}.
+
+\bibitem{Deppenmeier2002}
+U D.
+\newblock The unique biochemistry of methanogenesis.
+\newblock Prog Nucleic Acid Res Mol Biol. 2002;71:223--83.
+
+\bibitem{Chan2009}
+Chan L, Morgan-Kiss RM, Hanson TE.
+\newblock Functional Analysis of Three Sulfide:Quinone Oxidoreductase Homologs
+  in Chlorobaculum tepidum.
+\newblock J Bacteriol. 2009;10:1026–1034.
+
+\bibitem{Danczak2017}
+Danczak RE, Johnston MD, Kenah C, Slattery M, Wrighton KC, Wilkins MJ.
+\newblock Members of the Candidate Phyla Radiation are functionally
+  differentiated by carbon- and nitrogen-cycling capabilities.
+\newblock Microbiome. 2017;5:112.
 
 \end{thebibliography}

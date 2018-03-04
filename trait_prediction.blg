@@ -2,7 +2,7 @@ This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: trait_prediction.aux
 The style file: plos2015.bst
-Illegal, another \bibstyle command---line 99 of file trait_prediction.aux
+Illegal, another \bibstyle command---line 102 of file trait_prediction.aux
  : \bibstyle
  :          {plos2015}
 I'm skipping whatever remains of this command
@@ -18,45 +18,45 @@ Warning--there's a month but no year in Whitman
 Warning--missing publisher in Hastie2009a
 Warning--empty pages in Lee2006
 Warning--missing publisher in Hastie2009
-You've used 43 entries,
+You've used 47 entries,
             3058 wiz_defined-function locations,
-            1003 strings with 24895 characters,
-and the built_in function-call counts, 153000 in all, are:
-= -- 18549
-> -- 788
+            1032 strings with 26280 characters,
+and the built_in function-call counts, 164763 in all, are:
+= -- 19967
+> -- 856
 < -- 6
-+ -- 614
-- -- 197
-* -- 14635
-:= -- 16728
-add.period$ -- 200
-call.type$ -- 43
++ -- 648
+- -- 214
+* -- 15740
+:= -- 18022
+add.period$ -- 216
+call.type$ -- 47
 change.case$ -- 6
 chr.to.int$ -- 0
-cite$ -- 48
-duplicate$ -- 7553
-empty$ -- 15420
-format.name$ -- 237
-if$ -- 34985
+cite$ -- 52
+duplicate$ -- 8168
+empty$ -- 16606
+format.name$ -- 257
+if$ -- 37679
 int.to.chr$ -- 0
-int.to.str$ -- 43
-missing$ -- 438
-newline$ -- 252
-num.names$ -- 43
-pop$ -- 656
+int.to.str$ -- 47
+missing$ -- 479
+newline$ -- 272
+num.names$ -- 47
+pop$ -- 719
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 823
+skip$ -- 885
 stack$ -- 0
-substring$ -- 38534
-swap$ -- 1139
+substring$ -- 41449
+swap$ -- 1229
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 5
-while$ -- 466
-width$ -- 45
-write$ -- 540
+while$ -- 507
+width$ -- 49
+write$ -- 584
 (There was 1 error message)
