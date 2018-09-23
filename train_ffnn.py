@@ -27,7 +27,7 @@ from sklearn.metrics import accuracy_score, f1_score
 from sklearn.decomposition import PCA
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn import metrics
-from sklearn.model_selection import StratifiedShuffleSplit
+from sklearn.model_selection import StratifiedKFold
 import sklearn.model_selection
 
 ko_matrix = pd.read_csv('taxid_ko_matrix_all_full.csv').drop('Unnamed: 0',1)
@@ -65,7 +65,7 @@ for function in func_list:
 
     kos = np.array(kos,dtype=np.float64)
     sc = StandardScaler()
-    k_fold = StratifiedShuffleSplit(n_splits=5)
+    k_fold = StratifiedKFold(n_splits=5)
 
     # Run Linear Regression
     clf_lr = linear_model.LogisticRegression(penalty='l1', solver='liblinear',C=0.05,
