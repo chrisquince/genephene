@@ -57,8 +57,12 @@ def load_input_ortholog_file(fpath, training_ortholog_list):
 		raise
 
 	#remove any orthologs not in the training data
-	orth_table = orth_table[training_ortholog_list]
-
+	intersect_list = set(user_orths) & set(training_ortholog_list)
+	orth_table = orth_table[list(intersect_list)]
+	missing_list = set(training_ortholog_list) - set(user_orths)
+	for col in missing_list:
+		orth_table[col] = 0
+	orth_table = orth_table[list(training_ortholog_list)]
 	print("Loaded %i genomes. %i orthologs can be used for prediction."%orth_table.shape)
 	return orth_table
 
@@ -89,7 +93,7 @@ if __name__=='__main__':
 
 	#load application data
 	clf_dict, training_ortholog_list = load_classifiers(args.gene_ortholog_type)
-
+	#import ipdb; ipdb.set_trace()
 	#load user data
 	orth_table = load_input_ortholog_file(args.input_table, training_ortholog_list)
 
@@ -99,7 +103,6 @@ if __name__=='__main__':
 	print('Predicting functions...')
 	predictions = predict_functions(orth_table, clf_dict)
 	predictions.to_csv(args.output_file)
-
 
 
 
