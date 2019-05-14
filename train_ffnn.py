@@ -154,7 +154,7 @@ for function in func_list:
                 self.dout4 = nn.Dropout(0.25).to(device)
 
                 self.out = nn.Linear(100, 1).to(device)
-                self.out_act = nn.PReLU().to(device)
+                self.out_act = nn.Sigmoid().to(device)
 
             def forward(self, input_):
                 a1 = self.fc1(input_)
