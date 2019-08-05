@@ -8,9 +8,9 @@ import argparse
 import pickle
 
 #plotting
-from matplotlib import pyplot as plt
-from matplotlib import style
-style.use('ggplot')
+#from matplotlib import pyplot as plt
+#from matplotlib import style
+#style.use('ggplot')
 
 #constants and options
 
@@ -44,7 +44,7 @@ def load_input_ortholog_file(fpath, training_ortholog_list):
 	try:
 		orth_table = orth_table.set_index('genome_ID')
 	except KeyError:
-		print("Error: Input ortholog table must have a field called 'ID' with genome identifiers.")
+		print("Error: Input ortholog table must have a field called 'genome_ID' with genome identifiers.")
 		raise
 
 
